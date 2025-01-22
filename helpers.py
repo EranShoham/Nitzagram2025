@@ -36,7 +36,7 @@ def from_text_to_array(text):
 def mouse_in_button(button, mouse_pos):
     """
     The function get button and mouse press position on screen and return True
-    if mouse click on button
+    if mouse click on button.
     :param button: Button object
         button on screen
     :param mouse_pos: tuple
@@ -58,7 +58,7 @@ def draw_comment_text_box():
     pygame.display.flip()
 
 
-# Get the comment that the user typed will using Nitzagram and translate it
+# Get the comment that the user typed using Nitzagram and translate it
 # to string
 def read_comment_from_user():
     """
@@ -78,8 +78,7 @@ def read_comment_from_user():
                 if event.key == pygame.K_RETURN:
                     pressed_enter = True
                 # command to add len ! = 0
-                elif event.key == pygame.K_BACKSPACE \
-                        and not (len(new_comment) == 0):
+                elif event.key == pygame.K_BACKSPACE and not (len(new_comment) == 0):
                     new_comment = new_comment[:-1]
                 else:
                     new_comment += event.unicode

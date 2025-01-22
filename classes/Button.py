@@ -2,6 +2,7 @@ class Button:
     """
     A class used to represent a Button on the screen
     """
+
     def __init__(self, x_pos, y_pos, width, height):
         """
         Constructor

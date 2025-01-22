@@ -27,7 +27,7 @@ SHARE_BUTTON_Y_POS = 0.622 * WINDOW_HEIGHT
 SHARE_BUTTON_WIDTH = 0.067 * WINDOW_WIDTH
 SHARE_BUTTON_HEIGHT = 0.033 * WINDOW_HEIGHT
 
-# User name lines' position on the screen
+# Username lines' position on the screen
 USER_NAME_X_POS = 0.178 * WINDOW_WIDTH
 USER_NAME_Y_POS = 0.156 * WINDOW_HEIGHT
 
