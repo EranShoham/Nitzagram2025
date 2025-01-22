@@ -103,8 +103,7 @@ def center_text(num_of_rows, text_to_display, row_number):
     :return: tuple
         position of centered text
     """
-    horizontal_margin = \
-        (POST_HEIGHT - num_of_rows * TEXT_POST_FONT_SIZE) // 2
+    horizontal_margin = (POST_HEIGHT - num_of_rows * TEXT_POST_FONT_SIZE) // 2
     # Get the text object size (height and width)
     text_rect = text_to_display.get_rect()
     # Center the text to the center of X axis
