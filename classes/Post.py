@@ -27,12 +27,24 @@ class Post:
 
         :return: None
         """
-        desc_font = pygame.font.SysFont('chalkduster.ttf', TEXT_POST_FONT_SIZE)
-        ui_font = pygame.font.SysFont('chalkduster.ttf', TEXT_POST_FONT_SIZE)
-        screen.blit(desc_font.render(self.description, True, BLACK), [DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS])
-        screen.blit(ui_font.render(self.location, True, LIGHT_GRAY), [LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS])
-        screen.blit(ui_font.render(f"liked by {self.likes_counter} users", True, BLACK), [LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS])
+        self.display_description()
+        self.display_location()
+        self.display_likes()
         self.display_comments()
+
+    def display_description(self):
+        description_font = pygame.font.SysFont('chalkduster.ttf', TEXT_POST_FONT_SIZE)
+        screen.blit(description_font.render(self.description, True, BLACK),
+                    [DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS])
+
+    def display_location(self):
+        location_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
+        screen.blit(location_font.render(self.location, True, LIGHT_GRAY), [LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS])
+
+    def display_likes(self):
+        likes_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
+        screen.blit(likes_font.render(f"liked by {self.likes_counter} users", True, BLACK),
+                    [LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS])
 
     def display_comments(self):
         """
