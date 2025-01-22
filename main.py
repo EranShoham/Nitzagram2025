@@ -1,6 +1,7 @@
 import pygame
 from helpers import screen
-from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
+from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK, UI_FONT_SIZE, USER_NAME_X_POS, USER_NAME_Y_POS
+from classes.ImagePost import ImagePost
 
 
 def main():
@@ -18,6 +19,9 @@ def main():
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
+    noa = ImagePost("noa kirel", "Tel Aviv, Israel", "Ani Panthera!", "Images/noa_kirel.jpg")
+    ron = ImagePost("ronaldo", "Madrid, Spain", "Here I come!!!", "Images/ronaldo.jpg")
+    posts = [noa, ron]
 
     running = True
     while running:
@@ -30,6 +34,9 @@ def main():
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
+        username_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
+        screen.blit(username_font.render("nitzan17", True, BLACK), (USER_NAME_X_POS, USER_NAME_Y_POS))
+        ron.display()
 
         # Update display - without input update everything
         pygame.display.update()
