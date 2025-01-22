@@ -2,6 +2,7 @@ import pygame
 
 from constants import *
 from helpers import screen
+import Comment
 
 
 class Post:
@@ -26,8 +27,12 @@ class Post:
 
         :return: None
         """
-        # TODO: write me!
-        pass
+        desc_font = pygame.font.SysFont('chalkduster.ttf', TEXT_POST_FONT_SIZE)
+        ui_font = pygame.font.SysFont('chalkduster.ttf', TEXT_POST_FONT_SIZE)
+        screen.blit(desc_font.render(self.description, True, BLACK), [DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS])
+        screen.blit(ui_font.render(self.location, True, LIGHT_GRAY), [LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS])
+        screen.blit(ui_font.render(f"liked by {self.likes_counter} users", True, BLACK), [LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS])
+        self.display_comments()
 
     def display_comments(self):
         """
@@ -52,5 +57,5 @@ class Post:
             if i >= NUM_OF_COMMENTS_TO_DISPLAY - 1:
                 break
 
-
-
+    def add_comment(self, text):
+        self.comments.append(Comment.Comment(text))
