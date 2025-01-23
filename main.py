@@ -46,5 +46,6 @@ def main():
     pygame.quit()
     quit()
 
+
 if __name__ == "__main__":
     main()
