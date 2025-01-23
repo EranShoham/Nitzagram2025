@@ -28,10 +28,10 @@ def main():
                        "Here I come, Nitzamim class!!! See you there ;)", (0, 200, 0), (100, 150, 255))
     posts = [noa, ron, welcome]
     current_post_num = 0
-    post = posts[current_post_num]
 
     running = True
     while running:
+        post = posts[current_post_num]
         # Grabs events such as key pressed, mouse pressed and so.
         # Going through all the events that happened in the last clock tick
         for event in pygame.event.get():
