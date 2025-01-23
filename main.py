@@ -22,13 +22,16 @@ def main():
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
-    noa = ImagePost("Noa Kirel", "Tel Aviv, Israel", "Ani Panthera!", "Images/noa_kirel.jpg")
+    noa = ImagePost("Noa Kirel", "Tel-Aviv, Israel", "Ani Panthera!", "Images/noa_kirel.jpg")
     ron = ImagePost("Ronaldo", "Madrid, Spain", "Here I come!!!", "Images/ronaldo.jpg")
-    welcome = TextPost("Me", "Makif A", "Hello world!!!",
+    welcome = TextPost("Me", "Makif A, Be'er-Sheva", "Hello world!!!",
                        "Here I come, Nitzamim class!!! See you there ;)", (0, 200, 0), (100, 150, 255))
-    ice_cream = TextPost("Me", "the ice cream place", "good times!",
-                       "who said you can't eat icecream five times a day? not me!", (0, 200, 0), (255,119,188))
-    posts = [noa, ron, welcome,ice_cream]
+    ice_cream = TextPost("IceCreamLover15", "Golda Be'er-Sheva", "Good times!",
+                         "Who said you can't eat ice cream five times a day? Not me!", (250, 200, 100), (255, 119, 188))
+    niki = ImagePost("NikiTheDog", "Be'er-Sheva, Israel", "What is this weird flashy thing?", "Images/Niki.jpg")
+    sheleg = ImagePost("ShelegTheCat", "Be'er-Sheva, Israel", "Alone time is the best...", "Images/Sheleg.jpg")
+    toto = ImagePost("TotoThePuppy", "Be'er-Sheva, Israel", "Doggy life!", "Images/Toto.jpg")
+    posts = [noa, ron, welcome, ice_cream, niki, sheleg, toto]
     current_post_num = 0
 
     running = True
