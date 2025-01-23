@@ -17,6 +17,7 @@ class Post:
         self.likes_counter = 0
         self.comments = []
         self.comments_display_index = 0
+        self.too_many_comments = False
 
     def add_like(self):
         self.likes_counter += 1
@@ -39,7 +40,7 @@ class Post:
         self.comments_display_index = 0
 
     def view_more_comments(self):
-        self.comments_display_index += NUM_OF_COMMENTS_TO_DISPLAY
+        self.comments_display_index += 1
         self.comments_display_index %= len(self.comments)
 
     def display_comments(self):
@@ -53,6 +54,7 @@ class Post:
         position_index = self.comments_display_index
         # If there are more than 4 comments, print "view more comments"
         if len(self.comments) > NUM_OF_COMMENTS_TO_DISPLAY:
+            self.too_many_comments = True
             comment_font = pygame.font.SysFont('chalkduster.ttf', COMMENT_TEXT_SIZE)
             view_more_comments_button = comment_font.render("view more comments", True, LIGHT_GRAY)
             screen.blit(view_more_comments_button, (VIEW_MORE_COMMENTS_X_POS, VIEW_MORE_COMMENTS_Y_POS))
