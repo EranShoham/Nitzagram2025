@@ -1,11 +1,8 @@
 import pygame
 
 from constants import *
-from helpers import screen, from_text_to_array
+from helpers import screen
 
-
-from helpers import screen, from_text_to_array
-import pygame
 
 class Comment:
     def __init__(self, text):
