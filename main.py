@@ -1,7 +1,9 @@
 import pygame
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK, UI_FONT_SIZE, USER_NAME_X_POS, USER_NAME_Y_POS
-from classes.ImagePost import ImagePost
+# from classes.ImagePost import ImagePost
+from classes.TextPost import TextPost
+# from classes.Button import Button
 
 
 def main():
@@ -19,9 +21,10 @@ def main():
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
-    noa = ImagePost("noa kirel", "Tel Aviv, Israel", "Ani Panthera!", "Images/noa_kirel.jpg")
-    ron = ImagePost("ronaldo", "Madrid, Spain", "Here I come!!!", "Images/ronaldo.jpg")
-    posts = [noa, ron]
+    # noa = ImagePost("noa kirel", "Tel Aviv, Israel", "Ani Panthera!", "Images/noa_kirel.jpg")
+    # ron = ImagePost("ronaldo", "Madrid, Spain", "Here I come!!!", "Images/ronaldo.jpg")
+    welcome = TextPost("me", "Makif A", "Hello world!!!", "Here I come, Nitzamim class!!! See you there ;)", (0, 200, 0), (100, 150, 255))
+    # posts = [noa, ron, welcome]
 
     running = True
     while running:
@@ -36,7 +39,7 @@ def main():
         screen.blit(background, (0, 0))
         username_font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
         screen.blit(username_font.render("nitzan17", True, BLACK), (USER_NAME_X_POS, USER_NAME_Y_POS))
-        ron.display()
+        welcome.display()
 
         # Update display - without input update everything
         pygame.display.update()
