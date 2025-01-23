@@ -26,7 +26,9 @@ def main():
     ron = ImagePost("Ronaldo", "Madrid, Spain", "Here I come!!!", "Images/ronaldo.jpg")
     welcome = TextPost("Me", "Makif A", "Hello world!!!",
                        "Here I come, Nitzamim class!!! See you there ;)", (0, 200, 0), (100, 150, 255))
-    posts = [noa, ron, welcome]
+    ice_cream = TextPost("Me", "the ice cream place", "good times!",
+                       "who said you can't eat icecream five times a day? not me!", (0, 200, 0), (255,119,188))
+    posts = [noa, ron, welcome,ice_cream]
     current_post_num = 0
 
     running = True
