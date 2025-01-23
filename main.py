@@ -1,8 +1,11 @@
 import pygame
+
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK, UI_FONT_SIZE, USER_NAME_X_POS, USER_NAME_Y_POS
-# from classes.ImagePost import ImagePost
+from classes.ImagePost import ImagePost
 from classes.TextPost import TextPost
+
+
 # from classes.Button import Button
 
 
@@ -21,10 +24,12 @@ def main():
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
-    # noa = ImagePost("noa kirel", "Tel Aviv, Israel", "Ani Panthera!", "Images/noa_kirel.jpg")
-    # ron = ImagePost("ronaldo", "Madrid, Spain", "Here I come!!!", "Images/ronaldo.jpg")
-    welcome = TextPost("me", "Makif A", "Hello world!!!", "Here I come, Nitzamim class!!! See you there ;)", (0, 200, 0), (100, 150, 255))
-    # posts = [noa, ron, welcome]
+    noa = ImagePost("Noa Kirel", "Tel Aviv, Israel", "Ani Panthera!", "Images/noa_kirel.jpg")
+    ron = ImagePost("Ronaldo", "Madrid, Spain", "Here I come!!!", "Images/ronaldo.jpg")
+    welcome = TextPost("Me", "Makif A", "Hello world!!!",
+                       "Here I come, Nitzamim class!!! See you there ;)", (0, 200, 0), (100, 150, 255))
+    posts = [noa, ron, welcome]
+    posts.pop()
 
     running = True
     while running:

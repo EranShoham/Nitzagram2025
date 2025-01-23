@@ -20,7 +20,7 @@ class TextPost(Post):
 
         text_array = from_text_to_array(self.text)
         for i in range(len(text_array)):
-            line_loc = center_text(len(text_array), text_array[i], i)
             font = pygame.font.SysFont('chalkduster.ttf', TEXT_POST_FONT_SIZE)
-            text = font.render(self.text, True, self.text_color)
+            text = font.render(text_array[i], True, self.text_color)
+            line_loc = center_text(len(text_array), text, i)
             screen.blit(text, line_loc)
