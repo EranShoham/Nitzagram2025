@@ -1,8 +1,8 @@
 import pygame
 
+from classes.Comment import Comment
 from constants import *
 from helpers import screen
-from classes.Comment import Comment
 
 
 class Post:
@@ -30,6 +30,7 @@ class Post:
         :return: None
         """
         font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
+        screen.blit(font.render(self.username, True, BLACK), (USER_NAME_X_POS, USER_NAME_Y_POS))
         screen.blit(font.render(self.description, True, BLACK), [DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS])
         screen.blit(font.render(self.location, True, LIGHT_GRAY), [LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS])
         screen.blit(font.render(f"liked by {self.likes_counter} users", True, GREY),

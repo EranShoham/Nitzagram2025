@@ -114,7 +114,14 @@ def center_text(num_of_rows, text_to_display, row_number):
     return text_rect
 
 
-def censor(comment_text):
+def censor_comments(comment_text):
+    """
+    Censor bad words.
+    :param comment_text: str
+        The text to censor.
+    :return: str
+        The censored text.
+    """
     for i in BAD_WORDS:
         while i in comment_text:
             index = comment_text.index(i)
