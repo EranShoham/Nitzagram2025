@@ -5,6 +5,7 @@ from helpers import screen, mouse_in_button, read_comment_from_user , censor
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK, UI_FONT_SIZE, USER_NAME_X_POS, USER_NAME_Y_POS
 from classes.ImagePost import ImagePost
 from classes.TextPost import TextPost
+from  classes.Filter import Filter
 
 
 def main():
@@ -21,8 +22,8 @@ def main():
     background = pygame.transform.scale(background,
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
-    # TODO: add a post here
-    noa = ImagePost("Noa Kirel", "Tel-Aviv, Israel", "Ani Panthera!", "Images/noa_kirel.jpg")
+    purple_filter = Filter((30, 12, 121), 80)
+    noa = ImagePost("Noa Kirel", "Tel-Aviv, Israel", "Ani Panthera!", "Images/noa_kirel.jpg", purple_filter)
     ron = ImagePost("Ronaldo", "Madrid, Spain", "Here I come!!!", "Images/ronaldo.jpg")
     welcome = TextPost("Me", "Makif A, Be'er-Sheva", "Hello world!!!",
                        "Here I come, Nitzamim class!!! See you there ;)", (0, 200, 0), (100, 150, 255))
