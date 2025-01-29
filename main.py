@@ -1,7 +1,7 @@
 import pygame
 
 from buttons import *
-from helpers import screen, mouse_in_button, read_comment_from_user
+from helpers import screen, mouse_in_button, read_comment_from_user , censor
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK, UI_FONT_SIZE, USER_NAME_X_POS, USER_NAME_Y_POS
 from classes.ImagePost import ImagePost
 from classes.TextPost import TextPost
@@ -50,7 +50,8 @@ def main():
                     current_post_num += 1
                     current_post_num %= len(posts)
                 elif mouse_in_button(comment_button, mouse_pos):
-                    post.add_comment(read_comment_from_user())
+                    comment_text = censor(read_comment_from_user())
+                    post.add_comment(comment_text)
                 elif mouse_in_button(view_more_comments_button, mouse_pos) and post.too_many_comments:
                     post.view_more_comments()
 

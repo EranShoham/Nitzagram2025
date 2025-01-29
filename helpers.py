@@ -112,3 +112,11 @@ def center_text(num_of_rows, text_to_display, row_number):
     text_rect.y = (POST_Y_POS + horizontal_margin +
                    row_number * TEXT_POST_FONT_SIZE)
     return text_rect
+
+
+def censor(comment_text):
+    for i in BAD_WORDS:
+        while i in comment_text:
+            index = comment_text.index(i)
+            comment_text = comment_text[0: index] + "*" * len(i) + comment_text[index + len(i):]
+    return comment_text
