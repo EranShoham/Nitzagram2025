@@ -70,7 +70,7 @@ def main():
                 elif mouse_in_button(view_more_comments_button, mouse_pos) and post.too_many_comments:
                     post.view_more_comments()
                 elif mouse_in_button(share_button, mouse_pos):
-                    pass
+                    post.share("+972586140408")
 
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)

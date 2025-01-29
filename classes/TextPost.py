@@ -1,4 +1,5 @@
 import pygame
+import pywhatkit
 
 from classes.Post import Post
 from constants import *
@@ -24,3 +25,5 @@ class TextPost(Post):
             text = font.render(text_array[i], True, self.text_color)
             line_loc = center_text(len(text_array), text, i)
             screen.blit(text, line_loc)
+    def share(self, phone_num):
+        pywhatkit.sendwhatmsg_instantly(phone_num, "זה עובד!")
