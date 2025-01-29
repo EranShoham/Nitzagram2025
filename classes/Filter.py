@@ -1,10 +1,11 @@
 import pygame
+
 from constants import *
 from helpers import screen
 
 
 class Filter:
-    def __init__(self, color , alpha):
+    def __init__(self, color, alpha):
         self.color = color
         self.alpha = alpha
 
