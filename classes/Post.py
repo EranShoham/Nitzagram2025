@@ -19,6 +19,11 @@ class Post:
         self.comments_display_index = 0
         self.too_many_comments = False
 
+    def __str__(self):
+        message = (f"This post by {self.username} at {self.location}, is described: '{self.description}'"
+                   f"It has {self.likes_counter} likes, and {len(self.comments)} comments. ")
+        return message
+
     def add_like(self):
         self.likes_counter += 1
 

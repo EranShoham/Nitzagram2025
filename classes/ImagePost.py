@@ -1,6 +1,5 @@
 import pygame
 import pywhatkit
-from pygame.examples.cursors import image
 
 from classes.Post import Post
 from constants import *
@@ -20,5 +19,6 @@ class ImagePost(Post):
         screen.blit(self.image, (POST_X_POS, POST_Y_POS))
         if self.screen_filter is not None:
             self.screen_filter.apply_filter()
+
     def share(self, phone_num):
-        pywhatkit.sendwhats_image(phone_num, self.image_path, "זה עובד!")
+        pywhatkit.sendwhats_image(phone_num, self.image_path, self.__str__())
